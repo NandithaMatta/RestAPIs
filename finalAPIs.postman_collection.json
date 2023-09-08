@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "554d74b6-dd0d-43ed-a9cf-b7e466f57e45",
+		"name": "finalAPIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29468326"
+	},
+	"item": [
+		{
+			"name": "retrieving all questions and answers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getAllQuestionsAnswers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getAllQuestionsAnswers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve question and answer by question",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"question\":\"What is the capital of Japan?\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/getAnswerByQuestion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getAnswerByQuestion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modify question and answer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"qid\": 2,\n        \"ques\": \"Who painted the Mona Lisa?\",\n        \"ans\": {\n            \"aid\": 1,\n            \"ans\": \"Leonardo da Vinci\"\n        }\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/updateQuestionAnswer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"updateQuestionAnswer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create question and answer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": \"Who wrote the play 'Romeo and Juliet'?\",\n    \"answer\": \"William Shakespeare\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/createQuestionAnswer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createQuestionAnswer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete question and answer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/deleteQuestionAnswerById/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteQuestionAnswerById",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update question and answer by id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"question\": \"What is the currency of Brazil?\",\n    \"answer\": \"Brazilian real\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/updateQuestionAnswerById/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"updateQuestionAnswerById",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/nandithamatta/Downloads/questionary.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/uploadFile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"uploadFile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "download file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/downloadFile/tMo2AKhD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"downloadFile",
+						"tMo2AKhD"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
